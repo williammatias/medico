@@ -1,57 +1,44 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
+ * Medico Main Screen
+ * @author William Matias <matias.b.william@gmail.com>
  */
 
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+import {StyleSheet} from 'react-native';
 import {
-  Platform,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+    Container,
+    Content,
+    Card,
+    CardItem,
+    Text,
+    Button,
+    Header,
+    Left,
+    Right,
+    Icon,
+    Body,
+    Title
+} from 'native-base';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
 
 export default class App extends Component<{}> {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
-      </View>
-    );
-  }
+    render() {
+        return (
+            <Container>
+                <Header>
+                    <Body>
+                    <Title>Medico</Title>
+                    </Body>
+                </Header>
+            </Container>
+        );
+    }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        backgroundColor: '#F5FCFF',
+    }
 });
