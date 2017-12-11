@@ -37,7 +37,7 @@ export default class Main extends Component<{}> {
                     <List dataArray={categories}
                           renderRow={(category) =>
                               <ListItem>
-                                  <Text>{category.term}</Text>
+                                  <Text>{category.term} ({category.count})</Text>
                               </ListItem>
                           }>
                     </List>
