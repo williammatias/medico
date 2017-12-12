@@ -1,14 +1,14 @@
 import {connect} from "react-redux";
-import Main from "../components/Main";
+import Devices from "../components/Devices";
 
 
 const mapStateToProps = (state) => {
     return {
-        categories: state.categories
+        devices: state.devices
     }
 }
 
 export default connect(
     mapStateToProps
-)(Main)
+)(Devices)
 

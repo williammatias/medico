@@ -5,11 +5,12 @@
 
 import React from 'react';
 
+
 import {Provider} from "react-redux";
 import storeFactory from './store'
 import initialState from './initialState.json'
 import {fetchCategories} from "./actions";
-import Main from "./containers/Main";
+import App from "./App";
 
 
 function setup(): ReactClass<{}> {
@@ -25,7 +26,7 @@ function setup(): ReactClass<{}> {
         render() {
             return (
                 <Provider store={this.store}>
-                    <Main />
+                    <App/>
                 </Provider>
             );
         }
