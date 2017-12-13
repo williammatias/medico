@@ -10,7 +10,27 @@ export const categories = (state = {}, action) => {
     }
 }
 
+export const devices = (state = {}, action) => {
+    switch (action.type) {
+        case constants.FETCH_DEVICES:
+            return action.payload
+        default:
+            return state
+    }
+}
+
+export const device = (state = {}, action) => {
+    switch (action.type) {
+        case constants.FETCH_DEVICE:
+            return action.payload
+        default:
+            return state
+    }
+}
+
 
 export default combineReducers({
-    categories
+    categories,
+    devices,
+    device
 })
