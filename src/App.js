@@ -5,7 +5,7 @@
 // RNRF logic here
 import React, {Component} from 'react';
 import {Router, Scene} from 'react-native-router-flux';
-import DevicesCategories from "./containers/DevicesCategories";
+import DevicesCategories from "./containers/Categories";
 import Devices from "./containers/Devices";
 import Device from "./containers/Device";
 

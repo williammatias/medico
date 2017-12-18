@@ -1,5 +1,5 @@
 import {connect} from "react-redux";
-import Main from "../components/DevicesCategories";
+import Main from "../components/Categories";
 import {fetchDevices} from "../actions";
 
 

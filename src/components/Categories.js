@@ -7,7 +7,7 @@ import React, {Component} from 'react';
 import {Container, Content, List, ListItem, Text} from 'native-base';
 import {Actions} from 'react-native-router-flux';
 
-export default class DevicesCategories extends Component {
+export default class Categories extends Component {
 
     handleItemSelect(category) {
         this.props.getDevices(category);
