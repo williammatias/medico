@@ -18,6 +18,6 @@ const consoleMessages = store => next => action => {
 
 
 export default (initialState={}) => {
-    return applyMiddleware(thunk)(createStore)(appReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+    return applyMiddleware(thunk)(createStore)(appReducer, initialState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
     // return applyMiddleware(thunk, consoleMessages)(createStore)(appReducer, initialState)
 }

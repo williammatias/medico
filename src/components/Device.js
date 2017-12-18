@@ -4,7 +4,13 @@
  */
 
 import React, {Component} from 'react';
-import {Container, Content, List, ListItem, Text} from 'native-base';
+import {
+    Container,
+    Content,
+    List,
+    ListItem,
+    Text
+} from 'native-base';
 
 export default class Device extends Component {
 

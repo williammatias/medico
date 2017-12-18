@@ -4,7 +4,8 @@
  */
 
 import React, {Component} from 'react';
-import {Container, Content, List, ListItem, Text} from 'native-base';
+import {Card, CardItem, Container, Content, List, ListItem, Text, Thumbnail, View} from 'native-base';
+import {Dimensions, StyleSheet, TouchableOpacity} from 'react-native';
 import {Actions} from 'react-native-router-flux';
 
 export default class Categories extends Component {
@@ -15,19 +16,26 @@ export default class Categories extends Component {
     }
 
     render() {
-        let {categories} = this.props
+        let {categories} = this.props;
 
         return (
             <Container style={{backgroundColor: '#ffffff'}}>
                 <Content>
-                    <List dataArray={categories}
-                          renderRow={(category) =>
-                              <ListItem onPress={() => {
-                                  this.handleItemSelect(category.term)
-                              }}>
-                                  <Text>{category.term} ({category.count})</Text>
-                              </ListItem>
-                          }>
+                    <List
+                        dataArray={categories}
+                        contentContainerStyle={styles.cardsContainer}
+                        renderRow={(category) =>
+                            <TouchableOpacity
+                                style={styles.card}
+                                onPress={() => {
+                                    this.handleItemSelect(category.term)
+                                }}>
+                                <Thumbnail square source={require('../assets/images/ic_pill.png')}/>
+                                <Text>
+                                    {category.term}
+                                </Text>
+                            </TouchableOpacity>
+                        }>
                     </List>
                 </Content>
             </Container>
@@ -35,3 +43,18 @@ export default class Categories extends Component {
     }
 }
 
+const styles = StyleSheet.create({
+    cardsContainer: {
+        justifyContent: 'space-around',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        flex: 1,
+    },
+    card: {
+        margin: 5,
+        width: Dimensions.get('window').width / 4, //Device width divided in almost a half
+        justifyContent: 'center',
+        alignItems: 'center',
+        minHeight: 150,
+    },
+});
