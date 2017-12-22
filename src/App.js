@@ -15,7 +15,7 @@ export default class App extends Component {
             <Router>
                 <Scene key="root">
                     <Scene key="DevicesCategories" component={DevicesCategories}
-                           title="Devices Categories"
+                           title="Medico"
                            initial={true}/>
                     <Scene key="Devices" component={Devices} title="Devices"/>
                     <Scene key="Device" component={Device} title="Device"/>
