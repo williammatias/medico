@@ -9,8 +9,8 @@ import {Dimensions, StyleSheet} from 'react-native';
 import {Actions} from 'react-native-router-flux';
 
 import _ from 'lodash/string';
-import CategoryItem from './CategoryItem';
-export default class Categories extends Component {
+
+export default class CategoryItem extends Component {
 
     handleItemSelect(category) {
         this.props.getDevices(category);
@@ -18,37 +18,32 @@ export default class Categories extends Component {
     }
 
     render() {
-        let {categories} = this.props;
+        let {category} = this.props;
 
         return (
-            <Container style={{backgroundColor: '#F5F5F5'}}>
-                <Content>
-                    <H3 style={styles.title}>Browse All Devices Categories</H3>
-                    <List
-                        dataArray={categories}
-                        contentContainerStyle={styles.container}
-                        renderRow={(category) =>
-                           <CategoryItem category={category}/>
-                        }>
-                    </List>
-                </Content>
-            </Container>
+            <Button transparent
+                    style={styles.button}
+                    onPress={() => {
+                        this.handleItemSelect(category.term)
+                    }}>
+                <View style={styles.buttonView}>
+                    <Thumbnail square source={require('../assets/images/ic_pill.png')}/>
+                    <Text style={styles.buttonText}>
+                        {_.truncate(_.capitalize(category.term), {
+                            'length': 9,
+                            'separator': ' ',
+                            'omission': '..'
+                        })}
+                    </Text>
+                </View>
+            </Button>
+
         );
     }
 }
 
 const styles = StyleSheet.create({
-    container: {
-        justifyContent: 'space-around',
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        flex: 1,
-    },
-    title: {
-        textAlign: 'center',
-        marginTop: 39,
-        marginBottom: 39
-    },
+
     button: {
         backgroundColor: '#ffffff',
         margin: 5,
@@ -75,6 +70,6 @@ const styles = StyleSheet.create({
         color: '#aaaaaa',
         marginTop: 10,
         textAlign: 'center',
-        width:  (Dimensions.get('window').width / 3.5) - 20
+        width: (Dimensions.get('window').width / 3.5) - 20
     }
 });
