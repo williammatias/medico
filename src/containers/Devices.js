@@ -1,5 +1,5 @@
 import {connect} from "react-redux";
-import Devices from "../components/Devices";
+import Devices from "../scenes/Devices";
 import {fetchDevice} from "../actions";
 
 

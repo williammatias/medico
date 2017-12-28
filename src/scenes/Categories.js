@@ -4,18 +4,10 @@
  */
 
 import React, {Component} from 'react';
-import {Button, Card, CardItem, Container, Content, H3, List, ListItem, Text, Thumbnail, View} from 'native-base';
+import {Container, Content, H3, List} from 'native-base';
 import {Dimensions, StyleSheet} from 'react-native';
-import {Actions} from 'react-native-router-flux';
-
-import _ from 'lodash/string';
-import CategoryItem from './CategoryItem';
+import CategoryItem from '../containers/CategoryItem';
 export default class Categories extends Component {
-
-    handleItemSelect(category) {
-        this.props.getDevices(category);
-        Actions.Devices();
-    }
 
     render() {
         let {categories} = this.props;

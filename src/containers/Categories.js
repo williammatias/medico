@@ -1,6 +1,5 @@
 import {connect} from "react-redux";
-import Main from "../components/Categories";
-import {fetchDevices} from "../actions";
+import Categories from "../scenes/Categories";
 
 
 const mapStateToProps = (state) => {
@@ -9,17 +8,7 @@ const mapStateToProps = (state) => {
     }
 }
 
-const mapDispatchToProps = (dispatch) =>
-    ({
-        getDevices(category) {
-            dispatch(
-                fetchDevices(category)
-            )
-        }
-    })
-
 export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(Main)
+    mapStateToProps
+)(Categories)
 
