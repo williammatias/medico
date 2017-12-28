@@ -51,13 +51,13 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         minHeight: 125,
-        borderRadius: 6,
-        shadowColor: '#000000',
+        borderRadius: 5,
+        shadowColor: '#AAAAAA',
         shadowOffset: {
             width: 0,
             height: 2
         },
-        shadowRadius: 14,
+        shadowRadius: 2,
         elevation: 2,
         shadowOpacity: 1.0,
     },

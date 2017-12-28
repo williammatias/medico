@@ -40,33 +40,5 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         marginTop: 39,
         marginBottom: 39
-    },
-    button: {
-        backgroundColor: '#ffffff',
-        margin: 5,
-        width: Dimensions.get('window').width / 3.5, //Device width divided in almost a half
-        justifyContent: 'center',
-        alignItems: 'center',
-        minHeight: 125,
-        borderRadius: 6,
-        shadowColor: '#000000',
-        shadowOffset: {
-            width: 0,
-            height: 2
-        },
-        shadowRadius: 14,
-        elevation: 2,
-        shadowOpacity: 1.0,
-    },
-    buttonView: {
-        flex: 1,
-        flexDirection: 'column',
-        alignItems: 'center'
-    },
-    buttonText: {
-        color: '#aaaaaa',
-        marginTop: 10,
-        textAlign: 'center',
-        width:  (Dimensions.get('window').width / 3.5) - 20
     }
 });
