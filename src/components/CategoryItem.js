@@ -9,7 +9,7 @@ import {Dimensions, StyleSheet} from 'react-native';
 import {Actions} from 'react-native-router-flux';
 
 import _ from 'lodash/string';
-
+import * as cardTheme from '../../native-base-theme/components/Card'
 export default class CategoryItem extends Component {
 
     handleItemSelect(category) {
@@ -26,7 +26,7 @@ export default class CategoryItem extends Component {
                     onPress={() => {
                         this.handleItemSelect(category.term)
                     }}>
-                <View style={styles.buttonView}>
+                <Card style={styles.buttonView}>
                     <Thumbnail square source={require('../assets/images/ic_pill.png')}/>
                     <Text style={styles.buttonText}>
                         {_.truncate(_.capitalize(category.term), {
@@ -35,7 +35,7 @@ export default class CategoryItem extends Component {
                             'omission': '..'
                         })}
                     </Text>
-                </View>
+                </Card>
             </Button>
 
         );
@@ -45,25 +45,17 @@ export default class CategoryItem extends Component {
 const styles = StyleSheet.create({
 
     button: {
-        backgroundColor: '#ffffff',
         margin: 5,
         width: Dimensions.get('window').width / 3.5, //Device width divided in almost a half
         justifyContent: 'center',
         alignItems: 'center',
-        minHeight: 125,
-        borderRadius: 5,
-        shadowColor: '#AAAAAA',
-        shadowOffset: {
-            width: 0,
-            height: 2
-        },
-        shadowRadius: 2,
-        elevation: 2,
-        shadowOpacity: 1.0,
+        height: 125,
     },
     buttonView: {
+        height: 125,
         flex: 1,
         flexDirection: 'column',
+        justifyContent: 'center',
         alignItems: 'center'
     },
     buttonText: {

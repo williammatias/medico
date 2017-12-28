@@ -5,13 +5,15 @@
 
 import React from 'react';
 
-
 import {Provider} from "react-redux";
 import storeFactory from './store'
 import initialState from './initialState.json'
 import {fetchCategories} from "./actions";
 import App from "./App";
 
+import getTheme from '../native-base-theme/components';
+import platform from '../native-base-theme/variables/platform';
+import {StyleProvider} from 'native-base';
 
 function setup(): ReactClass<{}> {
     class Root extends React.Component {
@@ -25,9 +27,12 @@ function setup(): ReactClass<{}> {
 
         render() {
             return (
-                <Provider store={this.store}>
-                    <App/>
-                </Provider>
+                <StyleProvider style={getTheme(platform)}>
+                    <Provider store={this.store}>
+                        <App/>
+                    </Provider>
+                </StyleProvider>
+
             );
         }
     }

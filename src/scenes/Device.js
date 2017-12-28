@@ -5,8 +5,8 @@
 
 import React, {Component} from 'react';
 import {
-    Body, Card, CardItem, Container, Content, Header, List, ListItem, ScrollableTab, Tab, Tabs,
-    Text
+    Body, Card, CardItem, Container, Content, Header, List, ListItem, ScrollableTab, Tab, Tabs, Text,
+    View
 } from 'native-base';
 import {StyleSheet} from 'react-native';
 
@@ -27,30 +27,84 @@ export default class Device extends Component {
             <Container style={{backgroundColor: '#ffffff'}}>
                 <Tabs renderTabBar={() => <ScrollableTab/>}>
                     <Tab heading="Details">
-                        <Card style={styles.buttonView}>
-                            <CardItem header>
-                                <Text>Device's Name</Text>
-                            </CardItem>
-                            <CardItem>
-                                <Body>
-                                <Text>
-                                    {device.device_name}
-                                </Text>
-                                </Body>
-                            </CardItem>
-                        </Card>
-                        <Card contentContainerStyle={styles.buttonView}>
-                            <CardItem header>
-                                <Text>Medical Specialty Description</Text>
-                            </CardItem>
-                            <CardItem>
-                                <Body>
-                                <Text>
-                                    {device.definition}
-                                </Text>
-                                </Body>
-                            </CardItem>
-                        </Card>
+                        <Content>
+                            <Card contentContainerStyle={styles.card1}>
+                                <CardItem header>
+                                    <Text>Device's Name</Text>
+                                </CardItem>
+                                <CardItem>
+                                    <Body>
+                                    <Text>
+                                        {device.device_name}
+                                    </Text>
+                                    </Body>
+                                </CardItem>
+                            </Card>
+                            <Card contentContainerStyle={styles.card1}>
+                                <CardItem header>
+                                    <Text>Medical Specialty Description</Text>
+                                </CardItem>
+                                <CardItem>
+                                    <Body>
+                                    <Text>
+                                        {device.definition}
+                                    </Text>
+                                    </Body>
+                                </CardItem>
+                            </Card>
+                            <View style={{flexDirection: 'row'}}>
+                                <Card contentContainerStyle={styles.card2}>
+                                    <CardItem header>
+                                        <Text>Product Code</Text>
+                                    </CardItem>
+                                    <CardItem>
+                                        <Body>
+                                        <Text>
+                                            {device.product_code}
+                                        </Text>
+                                        </Body>
+                                    </CardItem>
+                                </Card>
+                                <Card contentContainerStyle={styles.card2}>
+                                    <CardItem header>
+                                        <Text>Medical Specialty Description</Text>
+                                    </CardItem>
+                                    <CardItem>
+                                        <Body>
+                                        <Text>
+                                            {device.review_panel}
+                                        </Text>
+                                        </Body>
+                                    </CardItem>
+                                </Card>
+                            </View>
+                            <View style={{flexDirection: 'row'}}>
+                                <Card contentContainerStyle={styles.card2}>
+                                    <CardItem header>
+                                        <Text>Medical Specialty</Text>
+                                    </CardItem>
+                                    <CardItem>
+                                        <Body>
+                                        <Text>
+                                            {device.medical_specialty}
+                                        </Text>
+                                        </Body>
+                                    </CardItem>
+                                </Card>
+                                <Card contentContainerStyle={styles.card2}>
+                                    <CardItem header>
+                                        <Text>Review Code</Text>
+                                    </CardItem>
+                                    <CardItem>
+                                        <Body>
+                                        <Text>
+                                            {device.review_code}
+                                        </Text>
+                                        </Body>
+                                    </CardItem>
+                                </Card>
+                            </View>
+                        </Content>
                     </Tab>
                     <Tab heading="Registration N#">
                         <List dataArray={registration_number}
@@ -87,32 +141,15 @@ export default class Device extends Component {
 
 
 const styles = StyleSheet.create({
-
-    button: {
-        backgroundColor: '#ffffff',
-        margin: 5,
+    card1: {
         height: 50,
-        justifyContent: 'center',
-        alignItems: 'center',
-        minHeight: 125,
-        borderRadius: 5,
-        shadowColor: '#AAAAAA',
-        shadowOffset: {
-            width: 0,
-            height: 2
-        },
-        shadowRadius: 2,
-        elevation: 2,
-        shadowOpacity: 1.0,
+        width: 50,
     },
-    buttonView: {
+    card2: {
         flex: 1,
-        flexDirection: 'column',
-        alignItems: 'center'
-    },
-    buttonText: {
-        color: '#aaaaaa',
-        marginTop: 10,
-        textAlign: 'center',
+        height: 50,
+        width: 50,
+        minWidth: 0,
+        overflow: 'visible'
     }
 });
