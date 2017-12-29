@@ -20,8 +20,8 @@ export default class Devices extends Component {
     render() {
         let {devices} = this.props
         return (
-            <Container style={{backgroundColor: '#F5F5F5'}}>
-                <Content style={{padding: 10}}>
+            <Container>
+                <Content padder>
                     <List dataArray={devices}
                           renderRow={(device) =>
                               <Card>
@@ -41,7 +41,9 @@ export default class Devices extends Component {
                                           </Text>
                                           <Text>
                                               {
-                                                  _.truncate(_.capitalize(_.lowerCase(device.definition)), {
+                                                  _.truncate(
+                                                      _.capitalize(
+                                                          _.lowerCase(device.definition)), {
                                                           'length': 65,
                                                           'separator': ' ',
                                                           'omission': '..'

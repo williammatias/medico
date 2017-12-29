@@ -4,23 +4,24 @@
  */
 
 import React, {Component} from 'react';
-import {Container, Content, H3, List} from 'native-base';
-import {Dimensions, StyleSheet} from 'react-native';
+import {Body, Container, Content, H3, Header, List, Title} from 'native-base';
+import {StyleSheet} from 'react-native';
 import CategoryItem from '../containers/CategoryItem';
+
 export default class Categories extends Component {
 
     render() {
         let {categories} = this.props;
 
         return (
-            <Container style={{backgroundColor: '#F5F5F5'}}>
-                <Content>
+            <Container>
+                <Content padder>
                     <H3 style={styles.title}>Browse All Devices Categories</H3>
                     <List
                         dataArray={categories}
                         contentContainerStyle={styles.container}
                         renderRow={(category) =>
-                           <CategoryItem category={category}/>
+                            <CategoryItem category={category}/>
                         }>
                     </List>
                 </Content>

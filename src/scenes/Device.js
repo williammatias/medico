@@ -5,10 +5,12 @@
 
 import React, {Component} from 'react';
 import {
-    Body, Card, CardItem, Container, Content, Header, List, ListItem, ScrollableTab, Tab, Tabs, Text,
+    Button, Card, CardItem, Container, Content, Header, Icon, List, ListItem, ScrollableTab, Tab, Tabs, Text, Title,
     View
 } from 'native-base';
-import {StyleSheet} from 'react-native';
+import {Dimensions, StyleSheet} from 'react-native';
+import DeviceDetails from '../components/DeviceDetails';
+
 
 export default class Device extends Component {
 
@@ -24,114 +26,53 @@ export default class Device extends Component {
             k_number = device.openfda.k_number;
         }
         return (
-            <Container style={{backgroundColor: '#ffffff'}}>
+            <Container>
                 <Tabs renderTabBar={() => <ScrollableTab/>}>
                     <Tab heading="Details">
-                        <Content>
-                            <Card contentContainerStyle={styles.card1}>
-                                <CardItem header>
-                                    <Text>Device's Name</Text>
-                                </CardItem>
-                                <CardItem>
-                                    <Body>
-                                    <Text>
-                                        {device.device_name}
-                                    </Text>
-                                    </Body>
-                                </CardItem>
-                            </Card>
-                            <Card contentContainerStyle={styles.card1}>
-                                <CardItem header>
-                                    <Text>Medical Specialty Description</Text>
-                                </CardItem>
-                                <CardItem>
-                                    <Body>
-                                    <Text>
-                                        {device.definition}
-                                    </Text>
-                                    </Body>
-                                </CardItem>
-                            </Card>
-                            <View style={{flexDirection: 'row'}}>
-                                <Card contentContainerStyle={styles.card2}>
-                                    <CardItem header>
-                                        <Text>Product Code</Text>
-                                    </CardItem>
-                                    <CardItem>
-                                        <Body>
-                                        <Text>
-                                            {device.product_code}
-                                        </Text>
-                                        </Body>
-                                    </CardItem>
-                                </Card>
-                                <Card contentContainerStyle={styles.card2}>
-                                    <CardItem header>
-                                        <Text>Medical Specialty Description</Text>
-                                    </CardItem>
-                                    <CardItem>
-                                        <Body>
-                                        <Text>
-                                            {device.review_panel}
-                                        </Text>
-                                        </Body>
-                                    </CardItem>
-                                </Card>
-                            </View>
-                            <View style={{flexDirection: 'row'}}>
-                                <Card contentContainerStyle={styles.card2}>
-                                    <CardItem header>
-                                        <Text>Medical Specialty</Text>
-                                    </CardItem>
-                                    <CardItem>
-                                        <Body>
-                                        <Text>
-                                            {device.medical_specialty}
-                                        </Text>
-                                        </Body>
-                                    </CardItem>
-                                </Card>
-                                <Card contentContainerStyle={styles.card2}>
-                                    <CardItem header>
-                                        <Text>Review Code</Text>
-                                    </CardItem>
-                                    <CardItem>
-                                        <Body>
-                                        <Text>
-                                            {device.review_code}
-                                        </Text>
-                                        </Body>
-                                    </CardItem>
-                                </Card>
-                            </View>
+                        <Content padder>
+                            <DeviceDetails device={device}/>
                         </Content>
                     </Tab>
                     <Tab heading="Registration N#">
-                        <List dataArray={registration_number}
-                              renderRow={(item) =>
-                                  <ListItem>
-                                      <Text>{item}</Text>
-                                  </ListItem>
-                              }>
-                        </List>
+                        <Content padder>
+                            <List dataArray={registration_number}
+                                  renderRow={(item) =>
+                                      <Card style={styles.card}>
+                                          <CardItem style={styles.cardItem}>
+                                              <Text>{item}</Text>
+                                          </CardItem>
+                                      </Card>
+                                  }>
+                            </List>
+                        </Content>
                     </Tab>
                     <Tab heading="FEI N#">
-                        <List dataArray={fei_number}
-                              renderRow={(item) =>
-                                  <ListItem>
-                                      <Text>{item}</Text>
-                                  </ListItem>
-                              }>
-                        </List>
+                        <Content padder>
+
+                            <List dataArray={fei_number}
+                                  renderRow={(item) =>
+                                      <Card style={styles.card}>
+                                          <CardItem style={styles.cardItem}>
+                                              <Text>{item}</Text>
+                                          </CardItem>
+
+                                      </Card>
+                                  }>
+                            </List>
+                        </Content>
                     </Tab>
                     <Tab heading="K N#">
-                        <List dataArray={k_number}
-                              renderRow={(item) =>
-                                  <ListItem>
-                                      <Text>{item}</Text>
-                                  </ListItem>
-                              }>
-                        </List>
+                        <Content padder>
+                            <List dataArray={k_number}
+                                  renderRow={(item) =>
+                                      <Card style={styles.card}>
+                                          <CardItem style={styles.cardItem}>
+                                              <Text>{item}</Text>
+                                          </CardItem>
+                                      </Card>
+                                  }>
+                            </List>
+                        </Content>
                     </Tab>
                 </Tabs>
             </Container>
@@ -141,15 +82,12 @@ export default class Device extends Component {
 
 
 const styles = StyleSheet.create({
-    card1: {
-        height: 50,
-        width: 50,
+    card: {
+        width: (Dimensions.get('window').width) - 20,
+        height: 106
     },
-    card2: {
-        flex: 1,
-        height: 50,
-        width: 50,
-        minWidth: 0,
-        overflow: 'visible'
-    }
+    cardItem: {
+        justifyContent: 'center',
+        paddingTop: 40
+    },
 });

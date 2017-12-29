@@ -113,7 +113,7 @@ export default {
     cardDefaultShadowBg: "#AAA",
 
     // Color
-    brandPrimary: platform === "ios" ? "#007aff" : "#3F51B5",
+    brandPrimary: platform === "ios" ? "#F77754" : "#F77754",
     brandInfo: "#62B1F6",
     brandSuccess: "#5cb85c",
     brandDanger: "#d9534f",
@@ -145,21 +145,21 @@ export default {
     tabBarTextColor: platform === "ios" ? "#6b6b6b" : "#b3c7f9",
     tabBarTextSize: platform === "ios" ? 14 : 11,
     activeTab: platform === "ios" ? "#007aff" : "#fff",
-    sTabBarActiveTextColor: "#007aff",
+    sTabBarActiveTextColor: "#F77754",
     tabBarActiveTextColor: platform === "ios" ? "#007aff" : "#fff",
     tabActiveBgColor: platform === "ios" ? "#cde1f9" : "#3F51B5",
 
     // Tab
-    tabDefaultBg: platform === "ios" ? "#F8F8F8" : "#3F51B5",
-    topTabBarTextColor: platform === "ios" ? "#6b6b6b" : "#b3c7f9",
-    topTabBarActiveTextColor: platform === "ios" ? "#007aff" : "#fff",
+    tabDefaultBg: platform === "ios" ? "#ffffff" : "#3F51B5",
+    topTabBarTextColor: platform === "ios" ? "#F77754CC" : "#b3c7f9",
+    topTabBarActiveTextColor: platform === "ios" ? "#F77754" : "#fff",
     topTabActiveBgColor: platform === "ios" ? "#cde1f9" : undefined,
     topTabBarBorderColor: platform === "ios" ? "#a7a6ab" : "#fff",
-    topTabBarActiveBorderColor: platform === "ios" ? "#007aff" : "#fff",
+    topTabBarActiveBorderColor: platform === "ios" ? "#F77754" : "#fff",
 
     // Header
-    toolbarBtnColor: platform === "ios" ? "#007aff" : "#fff",
-    toolbarDefaultBg: platform === "ios" ? "#F8F8F8" : "#3F51B5",
+    toolbarBtnColor: platform === "ios" ? "#F77754" : "#fff",
+    toolbarDefaultBg: platform === "ios" ? "#ffffff" : "#3F51B5",
     toolbarHeight: platform === "ios" ? (isIphoneX ? 88 : 64) : 56,
     toolbarIconSize: platform === "ios" ? 20 : 22,
     toolbarSearchIconSize: platform === "ios" ? 20 : 23,
@@ -167,7 +167,7 @@ export default {
     searchBarHeight: platform === "ios" ? 30 : 40,
     searchBarInputHeight: platform === "ios" ? 30 : 50,
     toolbarInverseBg: "#222",
-    toolbarTextColor: platform === "ios" ? "#000" : "#fff",
+    toolbarTextColor: platform === "ios" ? "#F77754" : "#fff",
     toolbarDefaultBorder: platform === "ios" ? "#a7a6ab" : "#3F51B5",
     iosStatusbar: platform === "ios" ? "dark-content" : "light-content",
     get statusBarColor() {
@@ -261,17 +261,18 @@ export default {
 
     // Title
     titleFontfamily: platform === "ios" ? "System" : "Roboto_medium",
-    titleFontSize: platform === "ios" ? 17 : 19,
+    titleFontSize: platform === "ios" ? 24 : 24,
     subTitleFontSize: platform === "ios" ? 12 : 14,
     subtitleColor: platform === "ios" ? "#8e8e93" : "#FFF",
 
     // New Variable
-    titleFontColor: platform === "ios" ? "#000" : "#FFF",
+    titleFontColor: platform === "ios" ? "#F77754" : "#FFF",
 
     // Other
     borderRadiusBase: platform === "ios" ? 5 : 2,
     borderWidth: 1 / PixelRatio.getPixelSizeForLayoutSize(1),
-    contentPadding: 10,
+    contentHorizontalPadding: 8,
+    contentVerticalPadding: 20,
 
     get darkenHeader() {
         return color(this.tabBgColor)
@@ -290,4 +291,6 @@ export default {
 
     // New Variable
     inputGroupRoundedBorderRadius: 30,
+
+    defaultBg: '#F5F5F5'
 };

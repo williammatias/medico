@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
 
     button: {
         margin: 5,
-        width: Dimensions.get('window').width / 3.5, //Device width divided in almost a half
+        width: Dimensions.get('window').width / 3.7, //Device width divided in almost a half
         justifyContent: 'center',
         alignItems: 'center',
         height: 125,

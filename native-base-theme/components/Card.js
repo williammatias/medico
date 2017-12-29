@@ -19,11 +19,11 @@ export default (variables = variable) => {
         shadowColor: variables.cardDefaultShadowBg,
         shadowOffset: {
             width: 0,
-            height: 2
+            height: 0
         },
-        shadowRadius: 2,
-        elevation: 2,
-        shadowOpacity: 1.0,
+        shadowRadius: 3,
+        elevation: 1,
+        shadowOpacity: 0.5,
     };
 
     return cardTheme;
