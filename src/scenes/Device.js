@@ -11,6 +11,7 @@ import {
 import {Dimensions, StyleSheet} from 'react-native';
 import DeviceDetails from '../components/DeviceDetails';
 
+import variable from '../../native-base-theme/variables/platform';
 
 export default class Device extends Component {
 
@@ -39,7 +40,7 @@ export default class Device extends Component {
                                   renderRow={(item) =>
                                       <Card style={styles.card}>
                                           <CardItem style={styles.cardItem}>
-                                              <Text>{item}</Text>
+                                              <Text style={styles.cardText}>{item}</Text>
                                           </CardItem>
                                       </Card>
                                   }>
@@ -53,7 +54,7 @@ export default class Device extends Component {
                                   renderRow={(item) =>
                                       <Card style={styles.card}>
                                           <CardItem style={styles.cardItem}>
-                                              <Text>{item}</Text>
+                                              <Text style={styles.cardText}>{item}</Text>
                                           </CardItem>
 
                                       </Card>
@@ -67,7 +68,7 @@ export default class Device extends Component {
                                   renderRow={(item) =>
                                       <Card style={styles.card}>
                                           <CardItem style={styles.cardItem}>
-                                              <Text>{item}</Text>
+                                              <Text style={styles.cardText}>{item}</Text>
                                           </CardItem>
                                       </Card>
                                   }>
@@ -90,4 +91,9 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         paddingTop: 40
     },
+    cardText: {
+        color: variable.brandPrimary,
+        fontWeight: '600',
+        fontSize: 18,
+    }
 });

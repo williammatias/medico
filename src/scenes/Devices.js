@@ -4,10 +4,10 @@
  */
 
 import React, {Component} from 'react';
-import {Body, Card, CardItem, Container, Content, Left, List, ListItem, Text, Thumbnail} from 'native-base';
+import {Body, Card, CardItem, Container, Content, Left, List, ListItem, Text, Thumbnail, View} from 'native-base';
 import {Actions} from "react-native-router-flux";
 import {StyleSheet} from 'react-native';
-
+import variable from '../../native-base-theme/variables/platform'
 import _ from 'lodash/string';
 
 export default class Devices extends Component {
@@ -29,7 +29,16 @@ export default class Devices extends Component {
                                       this.handleItemSelect(device.product_code)
                                   }}>
                                       <Left>
-                                          <Thumbnail small square source={require('../assets/images/ic_pill.png')}/>
+                                          <View style={styles.circle}>
+                                              <Text style={styles.logoText}>
+                                                  {
+                                                      _.truncate(device.device_name, {
+                                                          'length': 1,
+                                                          'omission': ''
+                                                      })
+                                                  }
+                                              </Text>
+                                          </View>
                                           <Body>
                                           <Text style={styles.title}>
                                               {
@@ -39,7 +48,7 @@ export default class Devices extends Component {
                                                   })
                                               }
                                           </Text>
-                                          <Text>
+                                          <Text note>
                                               {
                                                   _.truncate(
                                                       _.capitalize(
@@ -66,6 +75,19 @@ export default class Devices extends Component {
 
 const styles = StyleSheet.create({
     title: {
+        fontWeight: 'bold'
+    },
+    circle: {
+        width: 50,
+        height: 50,
+        borderRadius: 100 / 2,
+        backgroundColor: 'rgba(0, 0, 0, 0.26)',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    logoText: {
+        color: '#FFFFFF',
+        fontFamily: variable.secondaryFont,
         fontWeight: 'bold'
     }
 });

@@ -18,9 +18,9 @@ export const fetchCategories = () => (dispatch) => {
         )
 }
 
-export const fetchDevices = (category) => (dispatch) => {
+export const fetchDevices = (category, limit) => (dispatch) => {
 
-    fetch(`${FDAAPI}search=medical_specialty_description:"${category}"&limit=10`)
+    fetch(`${FDAAPI}search=medical_specialty_description:"${category}"&limit=${limit}`)
         .then(response => response.json())
         .then(
             json => {

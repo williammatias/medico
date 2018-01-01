@@ -4,9 +4,9 @@ import CategoryItem from "../components/CategoryItem";
 
 const mapDispatchToProps = (dispatch) =>
     ({
-        getDevices(category) {
+        getDevices(category, limit) {
             dispatch(
-                fetchDevices(category)
+                fetchDevices(category, limit)
             )
         }
     })

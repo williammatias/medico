@@ -26,9 +26,9 @@ export default class CategoryItem extends Component {
                     onPress={() => {
                         this.handleItemSelect(category.term)
                     }}>
-                <Card style={styles.buttonView}>
-                    <Thumbnail square source={require('../assets/images/ic_pill.png')}/>
-                    <Text style={styles.buttonText}>
+                <Card style={styles.card}>
+                    <Thumbnail small square source={require('../assets/images/ic_pill.png')}/>
+                    <Text style={styles.text}>
                         {_.truncate(_.capitalize(category.term), {
                             'length': 9,
                             'separator': ' ',
@@ -49,16 +49,16 @@ const styles = StyleSheet.create({
         width: Dimensions.get('window').width / 3.7, //Device width divided in almost a half
         justifyContent: 'center',
         alignItems: 'center',
-        height: 125,
+        height: 110,
     },
-    buttonView: {
-        height: 125,
+    card: {
+        height: 105,
         flex: 1,
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center'
     },
-    buttonText: {
+    text: {
         color: '#aaaaaa',
         marginTop: 10,
         textAlign: 'center',

@@ -33,24 +33,18 @@ export default class CustomNavBar extends Component {
 
     _renderMiddle() {
         let {title, device} = this.props;
-        switch (title) {
-            case 'Device':
-                return (
-                    <Body>
-                    <Title>
-                        {device.device_name}
-                    </Title>
-                    </Body>
-                );
-            default:
-                return (
-                    <Body>
-                    <Title>
-                        {title}
-                    </Title>
-                    </Body>
-                );
+        let headerTitle = title;
+        if (title === 'Device') {
+               headerTitle = device.device_name;
         }
+
+        return (
+            <Body>
+            <Title>
+                {headerTitle}
+            </Title>
+            </Body>
+        );
 
     }
 
@@ -58,7 +52,7 @@ export default class CustomNavBar extends Component {
     render() {
 
         return (
-            <Header style={styles.header}>
+            <Header hasTabs style={styles.header}>
                 {this._renderLeft()}
                 {this._renderMiddle()}
                 <Right>

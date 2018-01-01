@@ -23,7 +23,7 @@ export default {
     badgePadding: platform === "ios" ? 3 : 0,
 
     // Button
-    btnFontFamily: platform === "ios" ? "System" : "Roboto_medium",
+    btnFontFamily: platform === "ios" ? this.defaultFont : this.defaultFont,
     btnDisabledBg: "#b5b5b5",
     btnDisabledClr: "#f1f1f1",
 
@@ -123,7 +123,7 @@ export default {
     brandLight: "#f4f4f4",
 
     // Font
-    fontFamily: platform === "ios" ? "System" : "Roboto",
+    fontFamily: platform === "ios" ? this.defaultFont : this.defaultFont,
     fontSizeBase: 15,
 
     get fontSizeH1() {
@@ -150,16 +150,16 @@ export default {
     tabActiveBgColor: platform === "ios" ? "#cde1f9" : "#3F51B5",
 
     // Tab
-    tabDefaultBg: platform === "ios" ? "#ffffff" : "#3F51B5",
-    topTabBarTextColor: platform === "ios" ? "#F77754CC" : "#b3c7f9",
-    topTabBarActiveTextColor: platform === "ios" ? "#F77754" : "#fff",
+    tabDefaultBg: platform === "ios" ? "#ffffff" : "#ffffff",
+    topTabBarTextColor: platform === "ios" ? "#F77754CC" : "#F77754CC",
+    topTabBarActiveTextColor: platform === "ios" ? "#F77754" : "#F77754",
     topTabActiveBgColor: platform === "ios" ? "#cde1f9" : undefined,
     topTabBarBorderColor: platform === "ios" ? "#a7a6ab" : "#fff",
-    topTabBarActiveBorderColor: platform === "ios" ? "#F77754" : "#fff",
+    topTabBarActiveBorderColor: platform === "ios" ? "#F77754" : "#F77754",
 
     // Header
-    toolbarBtnColor: platform === "ios" ? "#F77754" : "#fff",
-    toolbarDefaultBg: platform === "ios" ? "#ffffff" : "#3F51B5",
+    toolbarBtnColor: platform === "ios" ? "#F77754" : "#F77754",
+    toolbarDefaultBg: platform === "ios" ? "#ffffff" : "#ffffff",
     toolbarHeight: platform === "ios" ? (isIphoneX ? 88 : 64) : 56,
     toolbarIconSize: platform === "ios" ? 20 : 22,
     toolbarSearchIconSize: platform === "ios" ? 20 : 23,
@@ -167,7 +167,7 @@ export default {
     searchBarHeight: platform === "ios" ? 30 : 40,
     searchBarInputHeight: platform === "ios" ? 30 : 50,
     toolbarInverseBg: "#222",
-    toolbarTextColor: platform === "ios" ? "#F77754" : "#fff",
+    toolbarTextColor: platform === "ios" ? "#F77754" : "#F77754",
     toolbarDefaultBorder: platform === "ios" ? "#a7a6ab" : "#3F51B5",
     iosStatusbar: platform === "ios" ? "dark-content" : "light-content",
     get statusBarColor() {
@@ -260,13 +260,13 @@ export default {
     noteFontSize: 14,
 
     // Title
-    titleFontfamily: platform === "ios" ? "System" : "Roboto_medium",
+    titleFontfamily: platform === "ios" ? this.defaultFontLight : this.defaultFontLight,
     titleFontSize: platform === "ios" ? 24 : 24,
     subTitleFontSize: platform === "ios" ? 12 : 14,
     subtitleColor: platform === "ios" ? "#8e8e93" : "#FFF",
 
     // New Variable
-    titleFontColor: platform === "ios" ? "#F77754" : "#FFF",
+    titleFontColor: platform === "ios" ? "#F77754" : "#F77754",
 
     // Other
     borderRadiusBase: platform === "ios" ? 5 : 2,
@@ -291,6 +291,8 @@ export default {
 
     // New Variable
     inputGroupRoundedBorderRadius: 30,
-
-    defaultBg: '#F5F5F5'
+    defaultBg: '#F5F5F5',
+    defaultFont: 'Ubuntu-Medium',
+    defaultFontLight: 'Ubuntu-Light',
+    secondaryFont: 'UbuntuCondensed-Regular'
 };

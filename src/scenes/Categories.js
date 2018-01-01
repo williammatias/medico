@@ -7,7 +7,7 @@ import React, {Component} from 'react';
 import {Body, Container, Content, H3, Header, List, Title} from 'native-base';
 import {StyleSheet} from 'react-native';
 import CategoryItem from '../containers/CategoryItem';
-
+import variable from '../../native-base-theme/variables/platform'
 export default class Categories extends Component {
 
     render() {
@@ -39,7 +39,9 @@ const styles = StyleSheet.create({
     },
     title: {
         textAlign: 'center',
-        marginTop: 39,
-        marginBottom: 39
+        marginTop: 10,
+        fontSize: 18,
+        marginBottom: 10,
+        fontFamily: variable.secondaryFont,
     }
 });

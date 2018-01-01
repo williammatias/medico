@@ -6,6 +6,7 @@
 import React, {Component} from 'react';
 import {Body, Card, CardItem, Content, Text, View} from 'native-base';
 import {Dimensions, StyleSheet} from 'react-native';
+import variable from '../../native-base-theme/variables/platform';
 
 
 export default class DeviceDetails extends Component {
@@ -15,123 +16,114 @@ export default class DeviceDetails extends Component {
 
         return (
             <Content>
-                <Card contentContainerStyle={styles.card1}>
+                <Card>
                     <CardItem header>
                         <Text>Device's Name</Text>
                     </CardItem>
                     <CardItem>
                         <Body>
-                        <Text>
+                        <Text note style={styles.brandText}>
                             {device.device_name}
                         </Text>
                         </Body>
                     </CardItem>
                 </Card>
-                <Card contentContainerStyle={styles.card1}>
+                <Card>
                     <CardItem header>
                         <Text>Medical Specialty Description</Text>
                     </CardItem>
                     <CardItem>
                         <Body>
-                        <Text>
+                        <Text note style={styles.brandText}>
                             {device.definition}
                         </Text>
                         </Body>
                     </CardItem>
                 </Card>
-                <View style={{flexDirection: 'row'}}>
-                    <Card contentContainerStyle={styles.card2}>
+                <View style={styles.rowCardContainer}>
+                    <Card style={styles.rowCard}>
                         <CardItem header>
                             <Text>Product Code</Text>
                         </CardItem>
                         <CardItem>
                             <Body>
-                            <Text>
+                            <Text style={styles.bigBrandText}>
                                 {device.product_code}
                             </Text>
                             </Body>
                         </CardItem>
                     </Card>
-                    <Card contentContainerStyle={styles.card2}>
+                    <Card style={styles.rowCard}>
                         <CardItem header>
                             <Text>Medical Specialty Description</Text>
                         </CardItem>
                         <CardItem>
                             <Body>
-                            <Text>
+                            <Text style={styles.bigBrandText}>
                                 {device.review_panel}
                             </Text>
                             </Body>
                         </CardItem>
                     </Card>
-                </View>
-                <View style={{flexDirection: 'row'}}>
-                    <Card contentContainerStyle={styles.card2}>
+                    <Card style={styles.rowCard}>
                         <CardItem header>
                             <Text>Unclassified Reason</Text>
                         </CardItem>
                         <CardItem>
                             <Body>
-                            <Text>
+                            <Text style={styles.bigBrandText}>
                                 {device.unclassified_reason}
                             </Text>
                             </Body>
                         </CardItem>
                     </Card>
-                    <Card contentContainerStyle={styles.card2}>
+                    <Card style={styles.rowCard}>
                         <CardItem header>
                             <Text>Device Class</Text>
                         </CardItem>
                         <CardItem>
                             <Body>
-                            <Text>
+                            <Text style={styles.bigBrandText}>
                                 {device.device_class}
                             </Text>
                             </Body>
                         </CardItem>
                     </Card>
-                </View>
-                <View style={{flexDirection: 'row'}}>
-                    <Card contentContainerStyle={styles.card2}>
+                    <Card style={styles.rowCard}>
                         <CardItem header>
                             <Text>Implant Flag</Text>
                         </CardItem>
                         <CardItem>
                             <Body>
-                            <Text>
+                            <Text style={styles.bigBrandText}>
                                 {device.implant_flag}
                             </Text>
                             </Body>
                         </CardItem>
                     </Card>
-                    <Card contentContainerStyle={styles.card2}>
+                    <Card style={styles.rowCard}>
                         <CardItem header>
                             <Text>Regulation Number</Text>
                         </CardItem>
                         <CardItem>
                             <Body>
-                            <Text>
+                            <Text style={styles.brandText}>
                                 {device.regulation_number}
                             </Text>
                             </Body>
                         </CardItem>
                     </Card>
-                </View>
-                <View style={{flexDirection: 'row'}}>
-                    <Card contentContainerStyle={styles.card2}>
+                    <Card style={styles.rowCard}>
                         <CardItem header>
                             <Text>Gmp Exempt Flag</Text>
                         </CardItem>
                         <CardItem>
                             <Body>
-                            <Text>
+                            <Text style={styles.bigBrandText}>
                                 {device.gmp_exempt_flag}
                             </Text>
                             </Body>
                         </CardItem>
-                    </Card>
-                    <Card contentContainerStyle={styles.card2}>
-
                     </Card>
                 </View>
             </Content>
@@ -142,24 +134,23 @@ export default class DeviceDetails extends Component {
 
 const styles = StyleSheet.create({
 
-    button: {
-        margin: 5,
-        width: Dimensions.get('window').width / 3.5, //Device width divided in almost a half
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: 125,
+    rowCardContainer: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'space-around'
     },
-    buttonView: {
-        height: 125,
-        flex: 1,
-        flexDirection: 'column',
+    rowCard: {
+        width: Dimensions.get('window').width / 2 - 20,
         justifyContent: 'center',
-        alignItems: 'center'
     },
-    buttonText: {
-        color: '#aaaaaa',
-        marginTop: 10,
-        textAlign: 'center',
-        width: (Dimensions.get('window').width / 3.5) - 20
+    brandText: {
+        color: variable.brandPrimary,
+        fontSize: 18,
+
+    },
+    bigBrandText: {
+        color: variable.brandPrimary,
+        fontSize: 48,
+        alignSelf: 'center',
     }
 });
